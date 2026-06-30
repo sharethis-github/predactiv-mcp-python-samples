@@ -1,4 +1,4 @@
-# Predactiv MCP — MCP Python SDK + OpenAI Agent
+# Predactiv MCP — MCP Python SDK based AI Agent
 
 This sample shows how to connect an AI agent to the **Predactiv MCP server** using the
 low-level [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) together with
