@@ -72,6 +72,11 @@ Every sample follows the same three steps:
 
 ```bash
 cd langchain
+
+# (recommended) create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate        # on Windows: .venv\Scripts\activate
+
 pip install -r requirements.txt
 export CLIENT_ID=your-predactiv-client-id
 export CLIENT_SECRET=your-predactiv-client-secret
