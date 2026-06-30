@@ -1,0 +1,5 @@
+langchain
+langchain-mcp-adapters
+langchain-openai
+requests
+-e ../oauth-token-lib

@@ -1,0 +1,3 @@
+anthropic
+requests
+-e ../oauth-token-lib
