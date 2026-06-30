@@ -58,6 +58,7 @@ python agent.py
 
 - Predactiv: https://predactiv.com
 - Predactiv MCP server: `https://mcp.predactiv.com`
+- Predactiv OAuth2 token url: `https://platform-api.predactiv.com/v2/oauth/token`
 - Model Context Protocol: https://modelcontextprotocol.io
 
 ## License
