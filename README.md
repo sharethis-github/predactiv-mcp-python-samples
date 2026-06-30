@@ -16,7 +16,7 @@ authentication helper:
 | Directory | What it shows | Status |
 | --- | --- | --- |
 | [`langchain/`](langchain) | Agent built with [LangChain](https://python.langchain.com/) + `langchain-mcp-adapters` | ✅ Implemented |
-| [`claude/`](claude) | Agent using Anthropic Claude | 🚧 Coming soon |
+| [`claude/`](claude) | Agent using [Anthropic Claude](https://www.anthropic.com/) via the native server-side MCP connector | ✅ Implemented |
 | [`openai/`](openai) | Agent using OpenAI GPT | 🚧 Coming soon |
 | [`mcp-sdk/`](mcp-sdk) | Direct use of the MCP Python SDK | 🚧 Coming soon |
 | [`oauth-token-lib/`](oauth-token-lib) | Shared OAuth2 authentication helper used by all samples | ✅ Implemented |
@@ -31,6 +31,11 @@ Every sample follows the same three steps:
    HTTP and fetches the available tools dynamically (nothing is hardcoded).
 3. **Run the agent** — the MCP tools are bound to an LLM, which calls them to accomplish a
    natural-language goal.
+
+> The [`claude/`](claude) sample is a variation on step 2–3: instead of fetching tools and
+> running the loop client-side, it hands the MCP server definition to Anthropic's Messages
+> API, and Claude connects to the server and runs the tool-calling loop server-side. See its
+> [README](claude) for details.
 
 ## Getting started
 
@@ -52,7 +57,8 @@ python agent.py
 - Python 3.9+
 - Predactiv API credentials (`CLIENT_ID` / `CLIENT_SECRET`)
 - An LLM provider API key, depending on the sample (e.g. `OPENAI_API_KEY` for the
-  LangChain sample). See each sample's README for details.
+  LangChain sample, `ANTHROPIC_API_KEY` for the Claude sample). See each sample's README
+  for details.
 
 ## Learn more
 
