@@ -3,10 +3,33 @@
 Sample code demonstrating how to connect AI agents to the **Predactiv MCP server**
 (`https://mcp.predactiv.com`) from Python.
 
-The [Predactiv](https://predactiv.com) data platform is exposed as a set of tools over the
+The [Predactiv Data Platform](https://predactiv.com) is exposed as a set of tools over the
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io). These samples show how to
 authenticate, discover those tools at runtime, and let a large language model use them to
 work with your audiences, datasets, datasources, destinations, and more.
+
+## What the Predactiv MCP server can do
+
+Predactiv MCP server (`https://mcp.predactiv.com`) turns the Predactiv Data Platform into an
+AI agent-native toolset over MCP, letting an LLM go from raw data to modeled, deliverable
+audiences without leaving the conversation. The toolset spans a few broad areas (and grows
+over time):
+
+- **Audience intelligence** — build, preview, and refine audience segments with live size
+  estimates, then deliver them to downstream platforms. Segments can be assembled from
+  natural-language intent, predictive signals, and rich filters.
+- **Data + ML modeling** — datasets aren't just stored, they're activated. First-party data
+  feeds a library of machine-learning models that enrich and expand reach: **audience
+  enrichment**, **lookalike modeling**, **URL-similarity / contextual models**, and more —
+  with the catalog of model types expanding over time.
+- **Signals & discovery** — explore thousands of predictor signals, filter metadata, data
+  sources, and delivery destinations (e.g. LiveRamp, The Trade Desk) to target precisely.
+- **Insights** — surface demographic, behavioral, and geographic breakdowns of an audience
+  with share and index analytics.
+
+Tools are discovered dynamically at runtime (`tools/list`), so agents always see the latest
+capabilities, and every call is OAuth2 bearer-authenticated — see
+[`oauth-token-lib`](oauth-token-lib).
 
 ## What's in this repo
 
