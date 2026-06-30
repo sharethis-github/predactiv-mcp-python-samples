@@ -39,6 +39,13 @@ destinations, filters/predictors, and insights (`predactiv_*` tool families).
 - An [OpenAI API key](https://platform.openai.com/) — this sample uses `gpt-5.4-mini` as the
   agent's LLM. Set it as the `OPENAI_API_KEY` environment variable.
 
+> **OpenAI is just the demonstration LLM — not a requirement.** Because this sample owns the
+> tool-calling loop directly, it's model-agnostic: any LLM that supports tool/function calling
+> works. To use a different provider, swap the `OpenAI(...)` client and the tool-call handling
+> for that provider's SDK (e.g. Anthropic's `messages.create` with `tools`), set its API key,
+> and update the `OPENAI_MODEL` constant at the top of [`agent.py`](agent.py). The MCP
+> connection and `session.call_tool(...)` execution stay exactly the same.
+
 > **Two separate credentials.** `OPENAI_API_KEY` authenticates your calls to OpenAI.
 > `CLIENT_ID` / `CLIENT_SECRET` authenticate to the Predactiv MCP server via
 > `oauth_token_lib`. Both must be set.

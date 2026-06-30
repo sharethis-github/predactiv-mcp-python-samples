@@ -27,6 +27,13 @@ Predactiv data platform (audiences, datasets, datasources, destinations, and mor
 - An [OpenAI API key](https://platform.openai.com/) — this sample uses `gpt-5.4-mini` as the
   agent's LLM. Set it as the `OPENAI_API_KEY` environment variable.
 
+> **OpenAI is just the demonstration LLM — not a requirement.** This sample is
+> model-agnostic: LangChain works with any chat model that supports tool calling. To use a
+> different LLM, swap the `ChatOpenAI(...)` client for another LangChain chat model (e.g.
+> `ChatAnthropic`), install its integration package, set that provider's API key, and update
+> the `OPENAI_MODEL` constant at the top of [`agent.py`](agent.py). The Predactiv MCP side is
+> unchanged.
+
 ## Setup
 
 From this `langchain/` directory:

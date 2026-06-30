@@ -36,13 +36,15 @@ capabilities, and every call is OAuth2 bearer-authenticated — see
 Each directory is a self-contained sample built on a different framework, plus a shared
 authentication helper:
 
-| Directory | What it shows | LLM |
+| Directory | What it shows | LLM (for demo) |
 | --- | --- | --- |
 | [`langchain/`](langchain) | Agent built with [LangChain](https://python.langchain.com/) + `langchain-mcp-adapters`, client-side tool-calling loop | OpenAI |
 | [`claude/`](claude) | Agent using [Anthropic Claude](https://www.anthropic.com/) via the native server-side MCP connector | Anthropic Claude |
 | [`openai/`](openai) | Agent using [OpenAI](https://platform.openai.com/) GPT via the native server-side MCP connector | OpenAI |
 | [`mcp-sdk/`](mcp-sdk) | Direct use of the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk), client-side tool-calling loop with no framework | OpenAI |
 | [`oauth-token-lib/`](oauth-token-lib) | Shared OAuth2 authentication helper used by all samples | — |
+
+> **The LLM column is just what each sample happens to use for demonstration — not a requirement.** The framework-based samples are model-agnostic: [`langchain/`](langchain) and [`mcp-sdk/`](mcp-sdk) can run on any LLM that supports tool calling (OpenAI, Anthropic, or others) by swapping the client and the `*_MODEL` constant at the top of `agent.py`. The two **connector** samples are tied to their provider by design — [`claude/`](claude) demonstrates Anthropic's native MCP connector and [`openai/`](openai) demonstrates OpenAI's, so each only makes sense with that provider. Predactiv MCP itself is LLM-agnostic; the choice of model is entirely yours.
 
 ## How the samples work
 
