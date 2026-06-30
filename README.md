@@ -41,7 +41,7 @@ authentication helper:
 | [`langchain/`](langchain) | Agent built with [LangChain](https://python.langchain.com/) + `langchain-mcp-adapters` | ✅ Implemented |
 | [`claude/`](claude) | Agent using [Anthropic Claude](https://www.anthropic.com/) via the native server-side MCP connector | ✅ Implemented |
 | [`openai/`](openai) | Agent using [OpenAI](https://platform.openai.com/) GPT via the native server-side MCP connector | ✅ Implemented |
-| [`mcp-sdk/`](mcp-sdk) | Direct use of the MCP Python SDK | 🚧 Coming soon |
+| [`mcp-sdk/`](mcp-sdk) | Direct use of the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) + OpenAI, with a client-side tool-calling loop | ✅ Implemented |
 | [`oauth-token-lib/`](oauth-token-lib) | Shared OAuth2 authentication helper used by all samples | ✅ Implemented |
 
 ## How the samples work
