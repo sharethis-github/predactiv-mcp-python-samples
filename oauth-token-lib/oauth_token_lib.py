@@ -22,7 +22,7 @@ PREDACTIV_TOKEN_URL = "https://platform-api.predactiv.com/v2/oauth/token"
 _cached_token = None
 _cached_expiry = 0.0
 
-def get_bearer_token(scope=None, force_refresh=False):
+def get_bearer_token(force_refresh=False):
     """Return a valid bearer access token using the client-credentials grant.
 
     CLIENT_ID and CLIENT_SECRET are read from the environment. The token is
@@ -42,8 +42,6 @@ def get_bearer_token(scope=None, force_refresh=False):
         )
 
     data = {"grant_type": "client_credentials"}
-    if scope:
-        data["scope"] = scope
 
     # Credentials are sent via HTTP Basic auth (client_secret_basic), the
     # OAuth2 default for the client-credentials grant.
@@ -67,9 +65,9 @@ def get_bearer_token(scope=None, force_refresh=False):
     return token
 
 
-def auth_headers(scope=None):
+def auth_headers():
     """Return a ready-to-use Authorization header dict for the MCP server."""
-    return {"Authorization": f"Bearer {get_bearer_token(scope=scope)}"}
+    return {"Authorization": f"Bearer {get_bearer_token()}"}
 
 
 if __name__ == "__main__":

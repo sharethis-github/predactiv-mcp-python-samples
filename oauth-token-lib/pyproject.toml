@@ -6,6 +6,7 @@ build-backend = "flit_core.buildapi"
 name = "oauth_token_lib"
 version = "1.0.0"
 description = "OAuth Token module for MCP samples"
+dependencies = ["requests"]
 
 [tool.flit.module]
 name = "oauth_token_lib"
