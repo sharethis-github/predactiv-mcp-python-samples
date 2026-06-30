@@ -36,13 +36,13 @@ capabilities, and every call is OAuth2 bearer-authenticated — see
 Each directory is a self-contained sample built on a different framework, plus a shared
 authentication helper:
 
-| Directory | What it shows | Status |
+| Directory | What it shows | LLM |
 | --- | --- | --- |
-| [`langchain/`](langchain) | Agent built with [LangChain](https://python.langchain.com/) + `langchain-mcp-adapters` | ✅ Implemented |
-| [`claude/`](claude) | Agent using [Anthropic Claude](https://www.anthropic.com/) via the native server-side MCP connector | ✅ Implemented |
-| [`openai/`](openai) | Agent using [OpenAI](https://platform.openai.com/) GPT via the native server-side MCP connector | ✅ Implemented |
-| [`mcp-sdk/`](mcp-sdk) | Direct use of the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) + OpenAI, with a client-side tool-calling loop | ✅ Implemented |
-| [`oauth-token-lib/`](oauth-token-lib) | Shared OAuth2 authentication helper used by all samples | ✅ Implemented |
+| [`langchain/`](langchain) | Agent built with [LangChain](https://python.langchain.com/) + `langchain-mcp-adapters`, client-side tool-calling loop | OpenAI |
+| [`claude/`](claude) | Agent using [Anthropic Claude](https://www.anthropic.com/) via the native server-side MCP connector | Anthropic Claude |
+| [`openai/`](openai) | Agent using [OpenAI](https://platform.openai.com/) GPT via the native server-side MCP connector | OpenAI |
+| [`mcp-sdk/`](mcp-sdk) | Direct use of the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk), client-side tool-calling loop with no framework | OpenAI |
+| [`oauth-token-lib/`](oauth-token-lib) | Shared OAuth2 authentication helper used by all samples | — |
 
 ## How the samples work
 
@@ -65,7 +65,7 @@ Every sample follows the same three steps:
 
 1. **Get credentials.** You'll need a Predactiv `CLIENT_ID` and `CLIENT_SECRET`.
    Contact [Predactiv](https://predactiv.com/contact-us/) if you don't have them.
-2. **Pick a sample.** Start with [`langchain/`](langchain), which is fully implemented.
+2. **Pick a sample.** [`langchain/`](langchain) is a good starting point.
 3. **Follow that sample's README** for setup, configuration, and run instructions.
 
 ```bash
@@ -78,11 +78,13 @@ python agent.py
 
 ## Prerequisites
 
-- Python 3.9+
+- Python 3.9+ (the [`mcp-sdk/`](mcp-sdk) sample requires Python 3.10+, per the MCP Python SDK)
 - Predactiv OAuth2 API credentials (`CLIENT_ID` / `CLIENT_SECRET`)
-- An LLM provider API key, depending on the sample (e.g. `OPENAI_API_KEY` for the
-  LangChain sample, `ANTHROPIC_API_KEY` for the Claude sample). See each sample's README
-  for details.
+- An LLM provider API key, depending on the sample:
+  - `OPENAI_API_KEY` — [`langchain/`](langchain), [`openai/`](openai), [`mcp-sdk/`](mcp-sdk)
+  - `ANTHROPIC_API_KEY` — [`claude/`](claude)
+
+  See each sample's README for details.
 
 ## Learn more
 
