@@ -53,8 +53,8 @@ headers = auth_headers()
 
 | Function | Description |
 | --- | --- |
-| `get_bearer_token(scope=None, force_refresh=False)` | Returns a valid access token string. Pass `scope` to request a specific OAuth scope, or `force_refresh=True` to bypass the cache and fetch a new token. |
-| `auth_headers(scope=None)` | Returns `{"Authorization": "Bearer <token>"}`, ready to pass as request headers. |
+| `get_bearer_token()` | Returns a valid access token string. Pass `force_refresh=True` to bypass the cache and fetch a new token. |
+| `auth_headers()` | Returns `{"Authorization": "Bearer <token>"}`, ready to pass as request headers. |
 
 ## Verify your setup
 
