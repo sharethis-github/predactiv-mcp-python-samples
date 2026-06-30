@@ -1,4 +1,4 @@
-# Predactiv MCP — LangChain Sample
+# Predactiv MCP — LangChain AI Agent
 
 This sample shows how to connect an AI agent to the **Predactiv MCP server** using
 [LangChain](https://python.langchain.com/) and
