@@ -41,7 +41,7 @@ Every sample follows the same three steps:
 ## Getting started
 
 1. **Get credentials.** You'll need a Predactiv `CLIENT_ID` and `CLIENT_SECRET`.
-   Contact [Predactiv](https://predactiv.com) if you don't have them.
+   Contact [Predactiv](https://predactiv.com/contact-us/) if you don't have them.
 2. **Pick a sample.** Start with [`langchain/`](langchain), which is fully implemented.
 3. **Follow that sample's README** for setup, configuration, and run instructions.
 
