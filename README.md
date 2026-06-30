@@ -56,7 +56,7 @@ python agent.py
 ## Prerequisites
 
 - Python 3.9+
-- Predactiv API credentials (`CLIENT_ID` / `CLIENT_SECRET`)
+- Predactiv OAuth2 API credentials (`CLIENT_ID` / `CLIENT_SECRET`)
 - An LLM provider API key, depending on the sample (e.g. `OPENAI_API_KEY` for the
   LangChain sample, `ANTHROPIC_API_KEY` for the Claude sample). See each sample's README
   for details.
