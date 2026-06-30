@@ -1,4 +1,4 @@
-"""Predactiv MCP server as agent tools using Anthropic Claude.
+"""Predactiv MCP server as AI agent tools using Anthropic Claude.
 
 This sample uses Claude's native MCP connector rather than a client-side agent
 loop: the MCP server definition is handed to the Messages API, and Anthropic's
@@ -56,7 +56,7 @@ async def run_claude_cloud_agent():
         mcp_servers=[
             {
                 "type": "url",
-                "name": "preactiv_mcp_server", # Server label; must match mcp_server_name below
+                "name": "predactiv_mcp_server", # Server label; must match mcp_server_name below
                 "url": PREDACTIV_MCP_SERVER_URL, # Predactiv MCP server endpoint
                 "authorization_token": get_bearer_token() # Bearer token passed through to the server
             }
@@ -66,7 +66,7 @@ async def run_claude_cloud_agent():
         tools=[
             {
                 "type": "mcp_toolset",
-                "mcp_server_name": "preactiv_mcp_server"
+                "mcp_server_name": "predactiv_mcp_server"
             }
         ],
         # Beta flag that enables the server-side MCP connector.

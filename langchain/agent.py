@@ -1,4 +1,4 @@
-"""Drive the Predactiv MCP server as agent tools using LangChain.
+"""Predactiv MCP server as AI agent tools using LangChain.
 
 This sample connects to the Predactiv MCP server over HTTP, dynamically
 converts its tools into LangChain tools, binds them to an LLM, and runs a goal
@@ -11,8 +11,8 @@ Required environment variables:
     CLIENT_ID        Predactiv OAuth client ID, used by oauth_token_lib.
     CLIENT_SECRET    Predactiv OAuth client secret, used by oauth_token_lib.
 
-The OpenAI key and the CLIENT_ID/CLIENT_SECRET pair are separate credentials:
-the first authenticates to the LLM provider, the second to the Predactiv MCP
+`OPENAI_API_KEY` and the `CLIENT_ID`/`CLIENT_SECRET` pair are separate
+credentials: the first authenticates to OpenAI, the second to the Predactiv MCP
 server.
 
 Run from inside this directory:
@@ -55,7 +55,7 @@ async def run_agent():
 
     # 3. Initialize your LLM. Reads OPENAI_API_KEY from the environment.
     #    Swap the model (or provider) here to use a different LLM.
-    llm = ChatOpenAI(model="gpt-4o")
+    llm = ChatOpenAI(model="gpt-5.4-mini")
 
     # 4. Create the LangChain agent with your server's tools
     agent = create_agent(llm, tools)
