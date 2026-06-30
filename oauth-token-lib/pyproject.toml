@@ -1,0 +1,11 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "oauth_token_lib"
+version = "1.0.0"
+description = "OAuth Token module for MCP samples"
+
+[tool.flit.module]
+name = "oauth_token_lib"
