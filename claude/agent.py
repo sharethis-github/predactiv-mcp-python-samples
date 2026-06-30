@@ -31,6 +31,7 @@ from oauth_token_lib import get_bearer_token
 #    Edit GOAL to change the task handed to the agent.
 PREDACTIV_MCP_SERVER_URL = "https://mcp.predactiv.com" # Predactiv MCP server endpoint
 GOAL = "Get list of my audiences from the Predactiv MCP server and return it to me."
+CLAUDE_MODEL = "claude-haiku-4-5" # Swap for a more capable model (e.g. claude-sonnet-4-6, claude-opus-4-8) as needed
 
 async def run_claude_cloud_agent():
     """Send GOAL to Claude with the Predactiv MCP toolset attached and print the answer.
@@ -48,7 +49,7 @@ async def run_claude_cloud_agent():
     
     # 3. Create the message using the native cloud-orchestrated MCP connector
     response = client.beta.messages.create(
-        model="claude-haiku-4-5",
+        model=CLAUDE_MODEL,
         max_tokens=1000,
         # Declare the remote MCP server Claude should connect to. The
         # authorization_token is the Predactiv OAuth bearer token obtained via

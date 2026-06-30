@@ -31,6 +31,7 @@ from oauth_token_lib import get_bearer_token
 #    Edit GOAL to change the task handed to the agent.
 PREDACTIV_MCP_SERVER_URL = "https://mcp.predactiv.com" # Predactiv MCP server endpoint
 GOAL = "Get list of my audiences from the Predactiv MCP server and return it to me."
+OPENAI_MODEL = "gpt-5.4-mini" # Swap for any model your key can access
 
 async def run_openai_cloud_agent():
     """Send GOAL to OpenAI with the Predactiv MCP server attached and print the answer.
@@ -51,7 +52,7 @@ async def run_openai_cloud_agent():
     #    runs the tool-calling loop server-side. The Responses API uses `input`
     #    (not `messages`, which belongs to the Chat Completions API).
     response = client.responses.create(
-        model="gpt-5.4-mini",
+        model=OPENAI_MODEL,
         tools=[
             {
                 "type": "mcp",

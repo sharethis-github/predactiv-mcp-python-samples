@@ -24,7 +24,7 @@ Predactiv data platform (audiences, datasets, datasources, destinations, and mor
 - Python 3.9+
 - A Predactiv account with API credentials (`CLIENT_ID` and `CLIENT_SECRET`).
   Contact Predactiv if you don't have these.
-- An [OpenAI API key](https://platform.openai.com/) — this sample uses `gpt-4o` as the
+- An [OpenAI API key](https://platform.openai.com/) — this sample uses `gpt-5.4-mini` as the
   agent's LLM. Set it as the `OPENAI_API_KEY` environment variable.
 
 ## Setup

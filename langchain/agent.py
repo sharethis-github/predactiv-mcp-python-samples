@@ -31,6 +31,7 @@ from oauth_token_lib import auth_headers
 
 PREDACTIV_MCP_SERVER_URL = "https://mcp.predactiv.com" # Predactiv MCP server endpoint
 GOAL = "Get list of my audiences from the Predactiv MCP server and return it to me."
+OPENAI_MODEL = "gpt-5.4-mini" # Swap for any model your key can access
 
 async def run_agent():
     """Connect to the Predactiv MCP server, build a LangChain agent, and run GOAL.
@@ -54,8 +55,8 @@ async def run_agent():
     tools = await client.get_tools()
 
     # 3. Initialize your LLM. Reads OPENAI_API_KEY from the environment.
-    #    Swap the model (or provider) here to use a different LLM.
-    llm = ChatOpenAI(model="gpt-5.4-mini")
+    #    Swap OPENAI_MODEL (or the provider) to use a different LLM.
+    llm = ChatOpenAI(model=OPENAI_MODEL)
 
     # 4. Create the LangChain agent with your server's tools
     agent = create_agent(llm, tools)
