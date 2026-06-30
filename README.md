@@ -1,4 +1,4 @@
-# Predactiv MCP — Python Samples
+# Predactiv MCP — AI Agent Samples in Python
 
 Sample code demonstrating how to connect AI agents to the **Predactiv MCP server**
 (`https://mcp.predactiv.com`) from Python.
