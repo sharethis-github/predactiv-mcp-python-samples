@@ -17,7 +17,7 @@ authentication helper:
 | --- | --- | --- |
 | [`langchain/`](langchain) | Agent built with [LangChain](https://python.langchain.com/) + `langchain-mcp-adapters` | ✅ Implemented |
 | [`claude/`](claude) | Agent using [Anthropic Claude](https://www.anthropic.com/) via the native server-side MCP connector | ✅ Implemented |
-| [`openai/`](openai) | Agent using OpenAI GPT | 🚧 Coming soon |
+| [`openai/`](openai) | Agent using [OpenAI](https://platform.openai.com/) GPT via the native server-side MCP connector | ✅ Implemented |
 | [`mcp-sdk/`](mcp-sdk) | Direct use of the MCP Python SDK | 🚧 Coming soon |
 | [`oauth-token-lib/`](oauth-token-lib) | Shared OAuth2 authentication helper used by all samples | ✅ Implemented |
 
@@ -32,10 +32,11 @@ Every sample follows the same three steps:
 3. **Run the agent** — the MCP tools are bound to an LLM, which calls them to accomplish a
    natural-language goal.
 
-> The [`claude/`](claude) sample is a variation on step 2–3: instead of fetching tools and
-> running the loop client-side, it hands the MCP server definition to Anthropic's Messages
-> API, and Claude connects to the server and runs the tool-calling loop server-side. See its
-> [README](claude) for details.
+> The [`claude/`](claude) and [`openai/`](openai) samples are a variation on steps 2–3:
+> instead of fetching tools and running the loop client-side, they hand the MCP server
+> definition to the provider's API (Anthropic's Messages API / OpenAI's Responses API), and
+> the provider connects to the server and runs the tool-calling loop server-side. See each
+> sample's README for details.
 
 ## Getting started
 
